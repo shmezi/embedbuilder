@@ -838,16 +838,22 @@ window.onload = () => {
     })
 
     document.querySelector('.opt.json').addEventListener('click', () => {
-        let jsonData = JSON.stringify(json, null, 4);
-        editor.setValue(jsonData === '{}' ? '{\n\t\n}' : jsonData);
-        editor.refresh();
-        document.body.classList.remove('gui');
-        // if (!smallerScreen.matches)
-        editor.focus();
-        activeFields = document.querySelectorAll('.gui > .item.active');
-        if (document.querySelector('section.low'))
-            togglePicker(true);
+        copyToClipboard(JSON.stringify(json, null, 0))
     })
+
+    
+    function copyToClipboard(text) {
+        var dummy = document.createElement("textarea");
+        // to avoid breaking orgain page when copying more words
+        // cant copy when adding below this code
+        // dummy.style.display = 'none'
+        document.body.appendChild(dummy);
+        //Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
+        dummy.value = text;
+        dummy.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummy);
+    }
 
     document.querySelector('.clear').addEventListener('click', () => {
         json = {};
