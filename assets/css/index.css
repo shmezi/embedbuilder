@@ -1916,6 +1916,9 @@ body.emptyEmbed.emptyContent .emptyTxt {
         margin: 40px 0 0 0 !important;
     }
 }
+.browse {
+    visibility: hidden;
+  }
 
 @media screen and (max-width: 530px) {
     .main .side1 {
