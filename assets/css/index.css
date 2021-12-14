@@ -1025,6 +1025,8 @@ body:not(.gui) .top>.gui, body:not(.gui) .bottom, body:not(.gui) .pickerToggle {
 
 .chooser {
     display: flex;
+    align-content: center;
+    text-align: center;
     height: 40px;
     width: 100px;
     border-radius: 5px;
@@ -1052,7 +1054,7 @@ body:not(.gui) .chooser>.json {
 .chooser>.back {
     position: absolute;
     height: 26px;
-    width: 43px;
+    width: 90px;
     border-radius: 4px;
     background: #41444a;
     transition: .5s ease-out;
@@ -1440,9 +1442,9 @@ textarea {
     overflow: auto;
 }
 
-.top>.gui>.item.rows2+.edit {
+/* .top>.gui>.item.rows2+.edit {
     height: 80px;
-}
+} */
 
 input[type="file"], button[type="submit"] {
     display: none;
@@ -1917,7 +1919,8 @@ body.emptyEmbed.emptyContent .emptyTxt {
     }
 }
 .browse {
-    visibility: hidden;
+    
+    
   }
 
 @media screen and (max-width: 530px) {
